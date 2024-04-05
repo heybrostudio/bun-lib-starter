@@ -1,0 +1,65 @@
+{
+	"name": "@heybrostudio/bun-lib-starter",
+	"version": "0.0.0",
+	"type": "module",
+	"description": "Developing Typescript Libraries with Bun",
+	"author": {
+		"name": "Caven",
+		"email": "cavenasdev@gmail.com"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/heybrostudio/bun-lib-starter#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/heybrostudio/bun-lib-starter.git"
+	},
+	"bugs": {
+		"url": "https://github.com/heybrostudio/bun-lib-starter/issues"
+	},
+	"keywords": ["heybrostudio", "typescript", "ts-lib", "bun"],
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"main": "dist/index.cjs",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": ["dist"],
+	"scripts": {
+		"dev": "bun run --watch src/index.ts",
+		"build": "tsup",
+		"test": "bun test",
+		"lint": "biome lint .",
+		"lint:fix": "biome lint . --apply",
+		"format": "biome format . --write",
+		"typecheck": "tsc --noEmit",
+		"release": "bumpp --commit --push --tag && npm publish --access public",
+		"up": "taze major -I",
+		"prepublishOnly": "bun run build",
+		"postinstall": "bunx simple-git-hooks"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.6.4",
+		"@heybrostudio/biome-config": "^0.0.5",
+		"@types/bun": "latest",
+		"bumpp": "^9.4.0",
+		"lint-staged": "^15.2.2",
+		"simple-git-hooks": "^2.11.1",
+		"taze": "^0.13.3",
+		"tsup": "^8.0.2",
+		"vite": "^5.2.8"
+	},
+	"peerDependencies": {
+		"typescript": "^5.4.4"
+	},
+	"simple-git-hooks": {
+		"pre-commit": "bun lint-staged"
+	},
+	"lint-staged": {
+		"*": "biome lint . --apply"
+	}
+}
