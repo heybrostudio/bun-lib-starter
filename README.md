@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://github.com/heybrostudio/bun-lib-starter">
-    <img alt="Developing Typescript Libraries with Bun" src="https://raw.githubusercontent.com/heybrostudio/bun-lib-starter/main/.github/logo.svg" width="280">
+    <img alt="Developing Typescript Libraries with Bun" src="https://raw.githubusercontent.com/heybrostudio/bun-lib-starter/main/.github/logo.svg" width="500">
   </a>
-  <br><br>
+  <br>
   <samp>Developing Typescript Libraries with Bun.</samp>
 </p>
 
